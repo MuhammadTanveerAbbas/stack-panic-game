@@ -1,0 +1,23 @@
+{
+  "name": "Stack Panic",
+  "short_name": "StackPanic",
+  "description": "A real-time SaaS ops game. Drag your team onto incoming tasks before they crash your startup.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0d0d",
+  "theme_color": "#00e87a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

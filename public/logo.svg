@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <!-- Icon background -->
+  <rect width="48" height="48" rx="10" fill="#0d0d0d"/>
+  <rect x="1" y="1" width="46" height="46" rx="9" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+
+  <!-- Stack layers -->
+  <rect x="8" y="10" width="32" height="5.5" rx="2" fill="#2a2a2a" stroke="#444" stroke-width="0.5"/>
+  <rect x="8" y="19.5" width="32" height="5.5" rx="2" fill="#2a2a2a" stroke="#444" stroke-width="0.5"/>
+  <rect x="8" y="29" width="32" height="5.5" rx="2" fill="#2a2a2a" stroke="#444" stroke-width="0.5"/>
+
+  <!-- Lightning bolt -->
+  <path d="M28 6 L17 25 H23.5 L20 42 L33 21 H26.5 L30 6 Z" fill="#00e87a" stroke="#0d0d0d" stroke-width="1.2" stroke-linejoin="round"/>
+
+  <!-- Wordmark: STACK -->
+  <text x="58" y="20" font-family="'Space Grotesk', 'Arial Black', sans-serif" font-weight="700" font-size="15" fill="#0d0d0d" letter-spacing="2">STACK</text>
+  <!-- Wordmark: PANIC (green) -->
+  <text x="58" y="38" font-family="'Space Grotesk', 'Arial Black', sans-serif" font-weight="700" font-size="15" fill="#00e87a" letter-spacing="2">PANIC</text>
+</svg>

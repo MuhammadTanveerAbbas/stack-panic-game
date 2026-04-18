@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Background -->
+  <rect width="32" height="32" rx="7" fill="#0d0d0d"/>
+  <rect x="1" y="1" width="30" height="30" rx="6" fill="#1a1a1a" stroke="#1a1a1a"/>
+
+  <!-- Stack layers (3 horizontal bars) -->
+  <rect x="5" y="7" width="22" height="4" rx="1.5" fill="#2a2a2a" stroke="#3a3a3a" stroke-width="0.5"/>
+  <rect x="5" y="14" width="22" height="4" rx="1.5" fill="#2a2a2a" stroke="#3a3a3a" stroke-width="0.5"/>
+  <rect x="5" y="21" width="22" height="4" rx="1.5" fill="#2a2a2a" stroke="#3a3a3a" stroke-width="0.5"/>
+
+  <!-- Lightning bolt overlay (the "panic" element) -->
+  <path d="M19 4 L11 17 H16 L13 28 L23 13 H18 L21 4 Z" fill="#00e87a" stroke="#0d0d0d" stroke-width="1" stroke-linejoin="round"/>
+</svg>

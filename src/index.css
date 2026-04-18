@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 97%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 160 60% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 15% 93%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 40 10% 93%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 160 60% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 10%;
+    --input: 0 0% 10%;
+    --ring: 160 60% 45%;
+    --radius: 0.75rem;
+
+    /* Game task colors */
+    --bug: 0 86% 97%;
+    --bug-accent: 0 84% 60%;
+    --feature: 214 100% 97%;
+    --feature-accent: 217 91% 60%;
+    --angry: 33 100% 96%;
+    --angry-accent: 25 95% 53%;
+    --investor: 289 100% 98%;
+    --investor-accent: 271 81% 56%;
+
+    /* Team colors */
+    --team-dev: 160 84% 39%;
+    --team-designer: 330 81% 60%;
+    --team-ai: 239 84% 67%;
+
+    /* NeoBrutalism shadows */
+    --shadow-sm: 2px 2px 0px hsl(0 0% 10%);
+    --shadow-md: 4px 4px 0px hsl(0 0% 10%);
+    --shadow-lg: 6px 6px 0px hsl(0 0% 10%);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 160 60% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 15% 93%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 10%;
+    --sidebar-ring: 160 60% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Space Grotesk", sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: "Space Grotesk", sans-serif;
+  }
+  .font-body {
+    font-family: "Inter", sans-serif;
+  }
+  .font-mono {
+    font-family: "Space Mono", monospace;
+  }
+
+  .neo-border {
+    @apply border-2 border-foreground;
+  }
+  .neo-card {
+    @apply border-2 border-foreground bg-card rounded-xl;
+    box-shadow: 4px 4px 0px hsl(0 0% 10%);
+  }
+  .neo-card:hover {
+    box-shadow: 6px 6px 0px hsl(0 0% 10%);
+    transform: translate(-1px, -1px);
+  }
+  .neo-button {
+    @apply border-2 border-foreground font-heading font-bold rounded-xl px-4 py-2 transition-all;
+    box-shadow: 3px 3px 0px hsl(0 0% 10%);
+  }
+  .neo-button:hover {
+    box-shadow: 5px 5px 0px hsl(0 0% 10%);
+    transform: translate(-1px, -1px);
+  }
+  .neo-button:active {
+    box-shadow: 1px 1px 0px hsl(0 0% 10%);
+    transform: translate(2px, 2px);
+  }
+}
+
+/* Game animations */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes card-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes card-pulse-red {
+  0%,
+  100% {
+    border-color: hsl(var(--border));
+  }
+  50% {
+    border-color: hsl(0 84% 60%);
+    box-shadow: 4px 4px 0px hsl(0 84% 60% / 0.5);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes flash-red {
+  0%,
+  100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: hsl(0 84% 60% / 0.1);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0.7;
+  }
+  66% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes typeout {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes level-up-slide {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  15% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  85% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}
+.animate-card-shake {
+  animation: card-shake 0.3s ease-in-out infinite;
+}
+.animate-card-pulse-red {
+  animation: card-pulse-red 1s ease-in-out infinite;
+}
+.animate-bounce-in {
+  animation: bounce-in 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.animate-flash-red {
+  animation: flash-red 0.3s ease-out;
+}
+.animate-float-up {
+  animation: float-up 0.6s ease-out forwards;
+}
+.animate-flicker:hover {
+  animation: flicker 0.15s ease-in-out;
+}
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+.animate-typeout {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typeout 1.2s steps(14) forwards;
+  width: 0;
+}
+.animate-level-up {
+  animation: level-up-slide 2.5s ease-in-out forwards;
+}
+
+/* Hide scrollbar across all browsers while keeping scroll functional */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE / Edge */
+}
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
