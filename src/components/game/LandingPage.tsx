@@ -14,7 +14,6 @@ import {
   Shield,
   ChevronDown,
   Github,
-  Twitter,
   Star,
   BarChart3,
   Cpu,
@@ -27,6 +26,11 @@ import {
   Flame,
   RefreshCw,
   Home,
+  Linkedin,
+  Info,
+  List,
+  Code,
+  Award,
 } from "lucide-react";
 import { RANDOM_NAMES } from "@/game/constants";
 import {
@@ -304,7 +308,7 @@ export function LandingPage({
 
       {/* ── NAVBAR ── */}
       <nav className="sticky top-0 z-40 border-b-2 border-foreground bg-card/95 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <button
             onClick={() => scrollTo("hero")}
             className="font-heading font-bold text-lg flex items-center gap-2"
@@ -312,27 +316,40 @@ export function LandingPage({
             <img src="/favicon.svg" alt="Stack Panic" className="w-7 h-7" />
             STACK PANIC
           </button>
-          <div className="hidden sm:flex items-center gap-1">
-            {[
-              ["features", "Features"],
-              ["how-to-play", "How to Play"],
-              ["leaderboard", "Leaderboard"],
-              ["tech", "Tech"],
-            ].map(([id, label]) => (
-              <button
-                key={id}
-                onClick={() => scrollTo(id)}
-                className="px-3 py-1.5 text-sm font-body text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors"
-              >
-                {label}
-              </button>
-            ))}
+          
+          <div className="hidden md:flex items-center gap-1">
+            <button
+              onClick={() => scrollTo("features")}
+              className="neo-button bg-secondary text-foreground text-xs px-3 py-2 flex items-center gap-1.5 min-h-[40px]"
+            >
+              <Zap className="w-3.5 h-3.5 text-primary" /> Features
+            </button>
+            <button
+              onClick={() => scrollTo("how-to-play")}
+              className="neo-button bg-secondary text-foreground text-xs px-3 py-2 flex items-center gap-1.5 min-h-[40px]"
+            >
+              <List className="w-3.5 h-3.5 text-feature-accent" /> How to Play
+            </button>
+            <button
+              onClick={() => scrollTo("leaderboard")}
+              className="neo-button bg-secondary text-foreground text-xs px-3 py-2 flex items-center gap-1.5 min-h-[40px]"
+            >
+              <Award className="w-3.5 h-3.5 text-angry-accent" /> Leaderboard
+            </button>
+            <button
+              onClick={() => scrollTo("tech")}
+              className="neo-button bg-secondary text-foreground text-xs px-3 py-2 flex items-center gap-1.5 min-h-[40px]"
+            >
+              <Code className="w-3.5 h-3.5 text-team-dev" /> Tech
+            </button>
           </div>
+          
           <button
             onClick={() => setShowNamePrompt(true)}
-            className="neo-button bg-primary text-primary-foreground text-xs px-4 py-2 flex items-center gap-1.5 min-h-[36px]"
+            className="neo-button bg-primary text-primary-foreground text-sm px-5 py-2.5 flex items-center gap-2 min-h-[44px]"
+            style={{ boxShadow: "3px 3px 0px hsl(0 0% 10%)" }}
           >
-            <Play className="w-3.5 h-3.5" /> Play Now
+            <Rocket className="w-4 h-4" /> Play Now
           </button>
         </div>
       </nav>
@@ -716,43 +733,65 @@ export function LandingPage({
 
       {/* ── FOOTER ── */}
       <footer className="bg-card border-t-2 border-foreground">
-        <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2 font-heading font-bold">
-            <img src="/favicon.svg" alt="Stack Panic" className="w-6 h-6" />
-            STACK PANIC
-            <span className="text-xs text-muted-foreground font-body font-normal ml-2">
-              v1.0 · A real-time SaaS ops game
-            </span>
+        <div className="max-w-6xl mx-auto px-4 py-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 font-heading font-bold">
+                <img src="/favicon.svg" alt="Stack Panic" className="w-6 h-6" />
+                STACK PANIC
+              </div>
+              <span className="text-xs text-muted-foreground font-body font-normal hidden sm:inline">
+                v1.0 · A real-time SaaS ops game
+              </span>
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => scrollTo("hero")}
+                className="neo-button bg-secondary text-foreground text-xs px-3 py-2 flex items-center gap-1.5 min-h-[36px]"
+              >
+                <Home className="w-3.5 h-3.5" /> Home
+              </button>
+              <a
+                href="https://github.com/muhammadtanveerabbas"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="neo-button bg-secondary text-foreground text-xs px-3 py-2 flex items-center gap-1.5 min-h-[36px]"
+              >
+                <Github className="w-3.5 h-3.5" /> GitHub
+              </a>
+              <a
+                href="https://x.com/m_tanveerabbas"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="neo-button bg-secondary text-foreground text-xs px-3 py-2 flex items-center gap-1.5 min-h-[36px]"
+              >
+                <img src="/x-icon.svg" alt="X" className="w-3.5 h-3.5" /> X
+              </a>
+              <a
+                href="https://linkedin.com/in/MuhammadTanveerAbbas"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="neo-button bg-secondary text-foreground text-xs px-3 py-2 flex items-center gap-1.5 min-h-[36px]"
+              >
+                <Linkedin className="w-3.5 h-3.5" /> LinkedIn
+              </a>
+            </div>
           </div>
-          <div className="flex items-center gap-3 text-muted-foreground text-sm font-body">
-            <button
-              onClick={() => scrollTo("hero")}
-              className="hover:text-foreground transition-colors flex items-center gap-1"
-            >
-              <Home className="w-3.5 h-3.5" /> Home
-            </button>
-            <span>·</span>
+          
+          <div className="mt-6 pt-6 border-t border-foreground/20 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-xs text-muted-foreground font-body">
+              Built with <span className="text-angry-accent">❤️</span> and too much caffeine
+            </p>
             <a
-              href="https://github.com"
+              href="https://themvpguy.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-foreground transition-colors flex items-center gap-1"
+              className="text-xs font-body text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
             >
-              <Github className="w-3.5 h-3.5" /> GitHub
-            </a>
-            <span>·</span>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-foreground transition-colors flex items-center gap-1"
-            >
-              <Twitter className="w-3.5 h-3.5" /> Twitter
+              Made by <span className="font-heading font-bold text-primary underline">The MVP Guy</span>
             </a>
           </div>
-          <p className="text-xs text-muted-foreground font-body">
-            Built with ❤️ and too much caffeine
-          </p>
         </div>
       </footer>
     </div>
